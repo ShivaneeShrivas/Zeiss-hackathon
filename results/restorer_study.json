@@ -1,0 +1,37 @@
+{
+ "split": "validation",
+ "epochs": 20,
+ "raw_polymer": {
+  "psnr": 32.728834413048006,
+  "val_auc_frozen_clf": 0.9633001348687623
+ },
+ "variants": {
+  "fid_s0": {
+   "psnr": 43.36604823223591,
+   "val_auc_frozen_clf": 0.9673721340388006,
+   "psnr_gain_db": 10.637213819187906,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_s0": {
+   "psnr": 41.50265244669825,
+   "val_auc_frozen_clf": 0.9596431165058614,
+   "psnr_gain_db": 8.773818033650244,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_task_s0": {
+   "psnr": 40.249080995160995,
+   "val_auc_frozen_clf": 0.9745046166614794,
+   "psnr_gain_db": 7.520246582112989,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_glass_s0": {
+   "psnr": 37.59848388840867,
+   "val_auc_frozen_clf": 0.9670090258325553,
+   "psnr_gain_db": 4.869649475360667,
+   "meets_claim_criteria_on_val": false
+  }
+ },
+ "selected": "lesion_task_s0",
+ "selection_rule": "among variants meeting the criteria: highest VALIDATION AUC through the frozen glass-trained classifier (the deployment path), then lesion recall, then PSNR gain. If none meet the criteria the best variant is carried forward and restoration is NOT claimed",
+ "any_variant_meets_criteria": false
+}

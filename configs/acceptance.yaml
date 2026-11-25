@@ -1,0 +1,40 @@
+# PRE-DECLARED acceptance criteria. Written BEFORE the PSF/MTF/tolerance/evaluation results were produced and not edited
+# after seeing them (git history / file date is the audit trail). Change only with a dated reason in `changelog`.
+declared: 2026-11-19
+optical:                       # polymer vs the glass reference design, at the sensor-limited frequencies
+  mtf_freq_lp_mm: [10, 25]     # 25 lp/mm ~ 20 um feature on a 10 um-pitch sensor (Nyquist 50 lp/mm)
+  mtf_min_ratio_to_glass: 0.70 # polymer MTF >= 70% of glass MTF at every sampled field
+  mtf_abs_min: 0.20            # and >= 0.20 absolute at 10 lp/mm
+  ee80_radius_max_um: 40       # radius containing 80% of energy
+  distortion_max_pct: 5.0
+  rel_illum_min: 0.60          # cos^4 relative illumination at the edge of field
+manufacturing:                 # hard constraints, applied BEFORE optical score is considered
+  min_centre_thickness_mm: 1.0
+  min_edge_thickness_mm: 0.8
+  min_air_gap_mm: 0.3
+  max_surface_slope_deg: 45
+  max_asphere_departure_mm: 0.5
+  max_thickness_ratio: 3.0     # max/min thickness inside one element (moulding uniformity guideline)
+tolerance:
+  n_draws: 1000
+  pass_rule: "every field RMS spot <= quality_floor_multiple x glass nominal spot"
+  floor_multiple_primary: 2.0
+  required_yield: 0.90         # lower 95% Wilson bound must exceed this to claim manufacturability
+statistics:
+  noninferiority_margin_auc: 0.05   # declared from the intended use: a screening tool may lose up to 5 AUC points;
+  noninferiority_margin_fpr: 0.05   # clinical justification must be signed off by an ophthalmologist (see docs/CLINICAL_ROADMAP.md)
+  baseline_selection: validation split only
+  operating_point: "threshold at 90% specificity chosen on the validation split of EACH pipeline"
+  test_set_opened: once
+restoration_claim_requires:        # restoration is NOT claimed unless ALL hold on held-out data
+  - "PSNR(restored) > PSNR(raw polymer)"
+  - "lesion recall(restored) >= lesion recall(raw polymer)"
+  - "invented blobs per image(restored) <= invented blobs per image(raw polymer)"
+  - "AUC(restored) - AUC(raw polymer) has lower 95% CI bound > 0, evaluated with an INDEPENDENT classifier"
+changelog:
+  - date: 2026-11-19
+    change: "Restorer checkpoint selection rule changed from 'highest PSNR gain' to 'highest lesion recall, then PSNR gain'."
+    reason: "Decided AFTER seeing VALIDATION numbers (fid: recall 0.63, lesion-weighted: recall 0.93, PSNR gain 4.97 vs 4.70 dB), because the product goal is disease information not sharpness. The test split had not been opened. Both variants are reported."
+  - date: 2026-11-20
+    change: "Restorer selection now ranks by validation AUC through the frozen glass-trained classifier, then lesion recall, then PSNR; added a glass-target variant."
+    reason: "Found on the larger synthetic run (test split not yet opened for this model): restorers that output ORIGINAL-sharp images saturate a classifier trained on glass renders (every restored image scored 1.0, AUC 0.5). Restoring to the glass render keeps the image in the classifier's domain. Disclosed because it was decided after seeing validation behaviour; all variants are reported in results/restorer_study.json."

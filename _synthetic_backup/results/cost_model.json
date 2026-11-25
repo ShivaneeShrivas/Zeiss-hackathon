@@ -1,0 +1,352 @@
+{
+ "label": "Estimated: ranges from configs/cost_inputs.yaml (status per row). Replace 'assumed' rows with quotations.",
+ "scenarios": {
+  "1000": {
+   "polymer_commercial": {
+    "optical_yield_used": 0.70875,
+    "glass_lens_module": {
+     "p5": 105.43898202868807,
+     "median": 153.77265383690388,
+     "p95": 218.75265180138553
+    },
+    "polymer_lens_module": {
+     "p5": 75.58162122127227,
+     "median": 184.8965105254979,
+     "p95": 363.5062496584484
+    },
+    "glass_camera_module": {
+     "p5": 156.33817374034513,
+     "median": 209.03312205834155,
+     "p95": 278.2087495047293
+    },
+    "polymer_camera_module": {
+     "p5": 125.15376697706557,
+     "median": 241.91407237130755,
+     "p95": 432.5694732501516
+    },
+    "saving_camera_module": {
+     "p5": -229.14405925218622,
+     "median": -31.869355205398392,
+     "p95": 104.46078848887025
+    },
+    "p_polymer_cheaper_camera_module": 0.38245,
+    "p_polymer_cheaper_lens_module": 0.38245,
+    "optical_share_of_camera_cost_glass": 0.7368411509296559
+   },
+   "polymer_precision": {
+    "optical_yield_used": 0.9525,
+    "glass_lens_module": {
+     "p5": 105.52340354544144,
+     "median": 153.56404066910474,
+     "p95": 219.3281723424396
+    },
+    "polymer_lens_module": {
+     "p5": 56.478687685083294,
+     "median": 137.23334163546622,
+     "p95": 270.54908801002557
+    },
+    "glass_camera_module": {
+     "p5": 155.68328101072984,
+     "median": 208.72946063466196,
+     "p95": 279.25780176332177
+    },
+    "polymer_camera_module": {
+     "p5": 104.69789911863835,
+     "median": 191.2894807566774,
+     "p95": 334.13477383743253
+    },
+    "saving_camera_module": {
+     "p5": -131.68767691764964,
+     "median": 18.17625199273394,
+     "p95": 131.2755232925112
+    },
+    "p_polymer_cheaper_camera_module": 0.57915,
+    "p_polymer_cheaper_lens_module": 0.57915,
+    "optical_share_of_camera_cost_glass": 0.7370793137119391
+   }
+  },
+  "10000": {
+   "polymer_commercial": {
+    "optical_yield_used": 0.70875,
+    "glass_lens_module": {
+     "p5": 98.39027732218389,
+     "median": 146.5606923004706,
+     "p95": 212.0237123276406
+    },
+    "polymer_lens_module": {
+     "p5": 27.277057335545084,
+     "median": 39.97267179516532,
+     "p95": 58.7950396728766
+    },
+    "glass_camera_module": {
+     "p5": 149.06782889213648,
+     "median": 201.44288393387586,
+     "p95": 271.0871306278324
+    },
+    "polymer_camera_module": {
+     "p5": 71.12674130117355,
+     "median": 88.19217837592794,
+     "p95": 110.22947155534777
+    },
+    "saving_camera_module": {
+     "p5": 57.585167684247,
+     "median": 112.64950971949847,
+     "p95": 183.24894708552384
+    },
+    "p_polymer_cheaper_camera_module": 1.0,
+    "p_polymer_cheaper_lens_module": 1.0,
+    "optical_share_of_camera_cost_glass": 0.7295258480835962
+   },
+   "polymer_precision": {
+    "optical_yield_used": 0.9525,
+    "glass_lens_module": {
+     "p5": 97.66763551638331,
+     "median": 146.6886451795155,
+     "p95": 212.15778051659655
+    },
+    "polymer_lens_module": {
+     "p5": 20.205042071409775,
+     "median": 29.78255087954234,
+     "p95": 43.79064614026328
+    },
+    "glass_camera_module": {
+     "p5": 148.53727435252705,
+     "median": 201.37918664792662,
+     "p95": 271.61729255872666
+    },
+    "polymer_camera_module": {
+     "p5": 62.88804794193781,
+     "median": 77.43549295344602,
+     "p95": 94.73703961762948
+    },
+    "saving_camera_module": {
+     "p5": 70.38898436423698,
+     "median": 123.87858076163911,
+     "p95": 193.86596534231245
+    },
+    "p_polymer_cheaper_camera_module": 1.0,
+    "p_polymer_cheaper_lens_module": 1.0,
+    "optical_share_of_camera_cost_glass": 0.7296767991941367
+   }
+  },
+  "100000": {
+   "polymer_commercial": {
+    "optical_yield_used": 0.70875,
+    "glass_lens_module": {
+     "p5": 97.17765606277779,
+     "median": 145.88775626636414,
+     "p95": 211.70428038940082
+    },
+    "polymer_lens_module": {
+     "p5": 19.319805867985295,
+     "median": 25.361644865317253,
+     "p95": 32.16770422382728
+    },
+    "glass_camera_module": {
+     "p5": 147.6083020445011,
+     "median": 200.45010390923886,
+     "p95": 271.2156116551028
+    },
+    "polymer_camera_module": {
+     "p5": 60.90191462285198,
+     "median": 72.30168923649603,
+     "p95": 84.71710863513546
+    },
+    "saving_camera_module": {
+     "p5": 75.54914206086836,
+     "median": 128.26309580472758,
+     "p95": 198.6800006616158
+    },
+    "p_polymer_cheaper_camera_module": 1.0,
+    "p_polymer_cheaper_lens_module": 1.0,
+    "optical_share_of_camera_cost_glass": 0.7286211988941782
+   },
+   "polymer_precision": {
+    "optical_yield_used": 0.9525,
+    "glass_lens_module": {
+     "p5": 97.57160215305045,
+     "median": 146.19579629238277,
+     "p95": 211.71619048051275
+    },
+    "polymer_lens_module": {
+     "p5": 14.406273341018526,
+     "median": 18.9644052176908,
+     "p95": 23.98709063859615
+    },
+    "glass_camera_module": {
+     "p5": 148.06367775273998,
+     "median": 201.02990123193456,
+     "p95": 271.1642745574995
+    },
+    "polymer_camera_module": {
+     "p5": 54.87468238587133,
+     "median": 65.44655876510953,
+     "p95": 76.59328476989754
+    },
+    "saving_camera_module": {
+     "p5": 83.38010540336363,
+     "median": 135.155846080363,
+     "p95": 204.95479420602487
+    },
+    "p_polymer_cheaper_camera_module": 1.0,
+    "p_polymer_cheaper_lens_module": 1.0,
+    "optical_share_of_camera_cost_glass": 0.728881829438889
+   }
+  }
+ },
+ "break_even": {
+  "polymer_yield_needed_for_lens_parity_at_last_volume": 0.12355756066832718,
+  "note": "at the largest volume with median inputs; values near 1 mean polymer needs a near-perfect process to match glass"
+ },
+ "module_mass_g": {
+  "common": {
+   "p5": 71.79139934530997,
+   "median": 96.62946845991786,
+   "p95": 127.6880786886092
+  },
+  "glass_total": {
+   "p5": 78.5811341478167,
+   "median": 103.48764819430895,
+   "p95": 134.4550692629192
+  },
+  "polymer_total": {
+   "p5": 73.3130553390983,
+   "median": 98.1669432880135,
+   "p95": 129.12702300591422
+  },
+  "optics_only_saving_pct": 84.41555546307565,
+  "module_saving_pct": {
+   "p5": 3.6407884099554666,
+   "median": 4.740221219470769,
+   "p95": 6.249430682470124
+  }
+ },
+ "compute_options": {
+  "phone_byo": {
+   "incremental_cost": {
+    "p5": 0.0,
+    "median": 0.0,
+    "p95": 0.0
+   },
+   "power_w": {
+    "p5": 0.7672193137206792,
+    "median": 1.3620458469735937,
+    "p95": 2.142668481057753
+   },
+   "mass_g": {
+    "p5": 0.0,
+    "median": 0.0,
+    "p95": 0.0
+   }
+  },
+  "rpi_zero2w": {
+   "incremental_cost": {
+    "p5": 13.229082977104008,
+    "median": 16.107873245818567,
+    "p95": 20.150848471698097
+   },
+   "power_w": {
+    "p5": 0.9096616794367894,
+    "median": 1.6177297532611605,
+    "p95": 2.5470747176824102
+   },
+   "mass_g": {
+    "p5": 10.049504803661526,
+    "median": 10.582433043168066,
+    "p95": 11.543846895401293
+   }
+  },
+  "rpi4": {
+   "incremental_cost": {
+    "p5": 38.54238096004462,
+    "median": 46.34880899042601,
+    "p95": 55.68914622553363
+   },
+   "power_w": {
+    "p5": 3.3468648151653158,
+    "median": 4.828382496541967,
+    "p95": 6.649120681361375
+   },
+   "mass_g": {
+    "p5": 46.1021181844017,
+    "median": 47.1653443545618,
+    "p95": 49.09917367700536
+   }
+  }
+ },
+ "lca": {
+  "1000": {
+   "glass": {
+    "p5": 3.8440474264849946,
+    "median": 5.45803122638555,
+    "p95": 7.3775588580032405
+   },
+   "polymer_mixed": {
+    "p5": 1.8114755470065327,
+    "median": 3.277891026842144,
+    "p95": 5.602385475872419
+   },
+   "polymer_single_material": {
+    "p5": 1.7580050318903397,
+    "median": 3.228899506788038,
+    "p95": 5.549501430205462
+   },
+   "saving_pct": {
+    "p5": -14.165725560187617,
+    "median": 39.299898799810904,
+    "p95": 69.05689292476377
+   },
+   "p_polymer_lower": 0.89575,
+   "note": "Per-module cradle-to-grave of optics+mount only; camera electronics, sensor and housing are common to both and excluded. Optical yield losses scale both."
+  },
+  "10000": {
+   "glass": {
+    "p5": 2.864213387274772,
+    "median": 4.184204464792324,
+    "p95": 5.858575712793674
+   },
+   "polymer_mixed": {
+    "p5": 0.6344000508903522,
+    "median": 0.9309969880862572,
+    "p95": 1.2836038062643154
+   },
+   "polymer_single_material": {
+    "p5": 0.5816674800911532,
+    "median": 0.8714129221067428,
+    "p95": 1.2191358007536393
+   },
+   "saving_pct": {
+    "p5": 63.55151702724971,
+    "median": 77.79111964406718,
+    "p95": 86.70919596688005
+   },
+   "p_polymer_lower": 1.0,
+   "note": "Per-module cradle-to-grave of optics+mount only; camera electronics, sensor and housing are common to both and excluded. Optical yield losses scale both."
+  },
+  "100000": {
+   "glass": {
+    "p5": 2.7287202446572514,
+    "median": 4.059083085951818,
+    "p95": 5.7156191002403105
+   },
+   "polymer_mixed": {
+    "p5": 0.446217462211833,
+    "median": 0.67655481284826,
+    "p95": 0.9720979479731261
+   },
+   "polymer_single_material": {
+    "p5": 0.3913116853359723,
+    "median": 0.6133359368451119,
+    "p95": 0.9131473827683638
+   },
+   "saving_pct": {
+    "p5": 71.27423093582793,
+    "median": 83.3566929733297,
+    "p95": 90.33818184859366
+   },
+   "p_polymer_lower": 1.0,
+   "note": "Per-module cradle-to-grave of optics+mount only; camera electronics, sensor and housing are common to both and excluded. Optical yield losses scale both."
+  }
+ },
+ "lca_boundary": "raw material, processing energy, tooling, mount, transport, end-of-life; excludes use phase (none) and shared electronics. Estimated; factors in cost_inputs.yaml"
+}

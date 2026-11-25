@@ -1,0 +1,50 @@
+# Every number is [low, likely, high]. status: assumed | published | quoted.  REPLACE `assumed` rows with supplier quotes
+# (ZEISS procurement / moulder RFQ) and rerun scripts/09_cost_lca.py. Nothing here is a quotation.
+currency: USD
+volumes_modules: [1000, 10000, 100000]
+glass:
+  n_elements: 4
+  element_cost: {v: [8, 20, 45],  status: assumed, note: "small precision-polished BK7/SF5 element at volume (catalogue prices are higher)"}
+  coating_per_element: {v: [0.5, 1.5, 4], status: assumed}
+  tooling_total: {v: [2000, 6000, 15000], status: assumed, note: "fixtures/test plates; no mould"}
+  assembly_per_module: {v: [6, 12, 25], status: assumed, note: "active alignment of 4 elements into a barrel"}
+  inspection_per_module: {v: [2, 4, 8], status: assumed}
+  barrel_per_module: {v: [6, 12, 25], status: assumed, note: "machined/anodised metal lens barrel"}
+  element_scrap_rate: {v: [0.02, 0.05, 0.12], status: assumed}
+polymer:
+  n_elements: 2
+  tooling_per_element: {v: [5000, 30000, 150000], status: published, note: "Apollo Optical: optical injection mould tooling roughly $5k-$150k+ depending on precision/cavities"}
+  cycle_time_s: {v: [25, 45, 90], status: assumed, note: "small optical lens, thick section needs long cooling"}
+  cavities: {v: [2, 4, 8], status: assumed}
+  machine_rate_per_hour: {v: [25, 45, 80], status: assumed}
+  material_per_kg: {v: [3, 6, 15], status: assumed, note: "optical-grade PMMA/COC pellets"}
+  coating_per_element: {v: [0.3, 1.0, 3], status: assumed}
+  assembly_per_module: {v: [2, 4, 9], status: assumed, note: "snap/pin-located stack, passive alignment"}
+  inspection_per_module: {v: [2, 4, 8], status: assumed}
+  housing_per_module: {v: [1, 3, 8], status: assumed, note: "moulded mount/barrel"}
+  mould_life_shots: {v: [200000, 500000, 1000000], status: assumed}
+common:
+  sensor: {v: [4, 8, 15], status: assumed}
+  illumination_led_driver: {v: [1.5, 3, 6], status: assumed}
+  pcb_electronics: {v: [3, 6, 12], status: assumed}
+  focus_mechanism: {v: [3, 7, 15], status: assumed}
+  body_housing: {v: [4, 9, 20], status: assumed}
+  packaging_logistics: {v: [1.5, 3, 7], status: assumed}
+  compute_options:
+    phone_byo: {incremental_cost: [0, 0, 0], power_w: [0.5, 1.2, 2.5], mass_g: [0, 0, 0], status: assumed}
+    rpi_zero2w: {incremental_cost: [12, 15, 22], power_w: [0.6, 1.4, 3.0], mass_g: [10, 10, 12], status: published, note: "Raspberry Pi Zero 2 W list price about $15"}
+    rpi4: {incremental_cost: [35, 45, 60], power_w: [2.7, 4.5, 7.5], mass_g: [46, 46, 50], status: published}
+  replacement_rate_over_life: {v: [0.02, 0.05, 0.12], status: assumed, note: "fraction of modules replaced under warranty"}
+mass_g_common: {sensor_pcb_led: [8, 12, 18], focus_mechanism: [4, 8, 14], body: [40, 70, 120], status: assumed}
+lca:
+  grid_kgco2_per_kwh: {v: [0.65, 0.71, 0.82], status: assumed, note: "India grid average, verify CEA/ember"}
+  glass_kgco2_per_kg: {v: [1.5, 3.0, 6.0], status: assumed, note: "optical glass melting at >1300 C; low confidence"}
+  pc_kgco2_per_kg: {v: [4.7, 5.0, 5.4], status: published, note: "Carbonfact polycarbonate range 4.74-5.42 kgCO2e/kg"}
+  pmma_kgco2_per_kg: {v: [3.8, 5.0, 6.5], status: assumed}
+  cop_coc_kgco2_per_kg: {v: [3.0, 5.0, 8.0], status: assumed}
+  moulding_kwh_per_kg: {v: [1.2, 2.2, 4.0], status: assumed}
+  glass_grind_polish_kwh_per_element: {v: [0.2, 0.6, 1.5], status: assumed}
+  tooling_kgco2_per_tool: {v: [300, 900, 3000], status: assumed, note: "tool steel machining + EDM"}
+  barrel_kgco2: {glass_metal_barrel: [0.5, 1.2, 2.5], polymer_mount: [0.05, 0.12, 0.3], status: assumed}
+  transport_kgco2_per_module: {v: [0.1, 0.3, 0.8], status: assumed}
+  end_of_life_kgco2_per_module: {glass: [0.02, 0.05, 0.15], polymer_single_material: [0.0, 0.03, 0.1], polymer_mixed: [0.03, 0.08, 0.2], status: assumed}

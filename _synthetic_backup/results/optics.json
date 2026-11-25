@@ -1,0 +1,165 @@
+{
+ "glass": {
+  "n_el": 4,
+  "spot_um": [
+   10.574815459010829,
+   9.101205004227822,
+   19.30960127715706
+  ],
+  "mass_g": 2.2215901956537056,
+  "materials": [
+   "N-BK7",
+   "N-SF5"
+  ]
+ },
+ "polymer": {
+  "n_el": 2,
+  "spot_um": [
+   18.76342776253695,
+   19.603228679131128,
+   56.76778226623455
+  ],
+  "mass_g": 0.346222491879401,
+  "name": "PMMA+Polycarbonate",
+  "aspheric": true,
+  "materials": [
+   "PMMA",
+   "Polycarbonate"
+  ],
+  "single_material": false
+ },
+ "polymer_sph": {
+  "n_el": 2,
+  "spot_um": [
+   30.96875949343549,
+   24.987415004183,
+   48.31410410511842
+  ],
+  "mass_g": 0.3523547548413658,
+  "note": "spherical 2-element start, kept as an ablation"
+ },
+ "polymer_3el": null,
+ "field_labels": [
+  "on-axis",
+  "50% field",
+  "edge"
+ ],
+ "field_weights": [
+  1.4575324996321788,
+  1.0108301913408955,
+  0.5316373090269255
+ ],
+ "quality_floor_um": [
+  21.149630918021657,
+  18.202410008455644,
+  38.61920255431412
+ ],
+ "quality_floor_rule": "2x the glass design's nominal RMS spot at each field (declared before polymer yields were computed)",
+ "mass_rel": 15.584444536924353,
+ "mass_rel_with_mount": 15.072902209077272,
+ "mount_mass_g": {
+  "glass": 2.073823941106629,
+  "polymer": 0.3012210804293648
+ },
+ "cost_rel_polymer": [
+  7.467532467532466,
+  12.857142857142858,
+  27.20315398886828
+ ],
+ "co2_rel_polymer": [
+  25.974074228207257,
+  36.363703919490156,
+  51.948148456414515
+ ],
+ "cost_label": "Estimated (placeholder coefficients; see cost_sensitivity)",
+ "cost_sensitivity": {
+  "p_polymer_cheaper": 1.0,
+  "ratio_p10": 0.1076544318627736,
+  "ratio_median": 0.14034671412430544,
+  "ratio_p90": 0.1828585112188449,
+  "break_even_yield_median": 0.13579634754672243,
+  "poly_cost_multiplier_to_break_even": {
+   "conservative": 5.468709076402798,
+   "median": 7.125211347052255
+  },
+  "sensitivity": {
+   "glass:grind_polish": -0.5991663632184158,
+   "poly:cycle": 0.3672208869435522,
+   "poly:mold_amort": 0.36483611668209026,
+   "poly:assembly": 0.30019913248399777,
+   "poly:coating": 0.29500679425301696,
+   "glass:blank": -0.20436926220842314,
+   "glass:centering": -0.16139897857349741,
+   "glass:assembly": -0.12717353743043383,
+   "glass:coating": -0.06925304995263262,
+   "poly:material": 0.05032116699130291
+  },
+  "label": "Estimated (assumed coefficient ranges, not supplier quotes)"
+ },
+ "yield_mc": {
+  "polymer_molded": {
+   "1.5": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "2": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "3": {
+    "0.25": 0.75,
+    "0.5": 0.7,
+    "1": 0.65,
+    "2": 0.65,
+    "4": 0.4
+   },
+   "4": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 0.95,
+    "4": 0.65
+   },
+   "6": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "4": 0.95
+   }
+  },
+  "glass_ground": {
+   "1.5": {
+    "1": 1.0
+   },
+   "2": {
+    "1": 1.0
+   },
+   "3": {
+    "1": 1.0
+   },
+   "4": {
+    "1": 1.0
+   },
+   "6": {
+    "1": 1.0
+   }
+  }
+ },
+ "floor_multiples": [
+  1.5,
+  2,
+  3,
+  4,
+  6
+ ],
+ "required_floor_multiple_for_polymer": 4,
+ "loosest_passing_polymer_grade_scale": 2,
+ "floor_note": "Polymer meets a floor of 4x the glass blur at 90% yield (pre-declared primary floor: 2x). The remaining blur must be recovered in software, which is what the restorer is for."
+}

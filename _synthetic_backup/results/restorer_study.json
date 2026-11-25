@@ -1,0 +1,80 @@
+{
+ "split": "validation",
+ "epochs": 20,
+ "raw_polymer": {
+  "psnr": 20.82621221385339,
+  "lesion": {
+   "contrast_retention": 0.41966254789700214,
+   "lesion_ssim": 0.48887025981996374,
+   "lesion_recall": 0.7399326164032045,
+   "hallucinated_blobs": 3.588235294117647,
+   "n_images_with_masks": 34
+  },
+  "val_auc_frozen_clf": 0.9752321981424148
+ },
+ "variants": {
+  "fid_s0": {
+   "psnr": 29.901589533928146,
+   "val_auc_frozen_clf": 0.5,
+   "lesion": {
+    "contrast_retention": 0.47837411188867257,
+    "lesion_ssim": 0.7287229938926463,
+    "lesion_recall": 0.8558004903593138,
+    "hallucinated_blobs": 7.529411764705882,
+    "n_images_with_masks": 34
+   },
+   "psnr_gain_db": 9.075377320074757,
+   "recall_not_worse": true,
+   "invented_not_worse": false,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_s0": {
+   "psnr": 29.937602853690294,
+   "val_auc_frozen_clf": 0.5,
+   "lesion": {
+    "contrast_retention": 0.8506143905349187,
+    "lesion_ssim": 0.8988740966597417,
+    "lesion_recall": 0.9835441519265049,
+    "hallucinated_blobs": 8.5,
+    "n_images_with_masks": 34
+   },
+   "psnr_gain_db": 9.111390639836905,
+   "recall_not_worse": true,
+   "invented_not_worse": false,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_task_s0": {
+   "psnr": 22.378581327589004,
+   "val_auc_frozen_clf": 0.9682662538699691,
+   "lesion": {
+    "contrast_retention": 0.437110700509034,
+    "lesion_ssim": 0.5193287178964369,
+    "lesion_recall": 0.6548023055375998,
+    "hallucinated_blobs": 7.529411764705882,
+    "n_images_with_masks": 34
+   },
+   "psnr_gain_db": 1.5523691137356153,
+   "recall_not_worse": false,
+   "invented_not_worse": false,
+   "meets_claim_criteria_on_val": false
+  },
+  "lesion_glass_s0": {
+   "psnr": 24.297453744426477,
+   "val_auc_frozen_clf": 1.0,
+   "lesion": {
+    "contrast_retention": 0.7027828998043281,
+    "lesion_ssim": 0.7821005525211707,
+    "lesion_recall": 0.9717667136784783,
+    "hallucinated_blobs": 5.205882352941177,
+    "n_images_with_masks": 34
+   },
+   "psnr_gain_db": 3.4712415305730886,
+   "recall_not_worse": true,
+   "invented_not_worse": false,
+   "meets_claim_criteria_on_val": false
+  }
+ },
+ "selected": "lesion_glass_s0",
+ "selection_rule": "among variants meeting the criteria: highest VALIDATION AUC through the frozen glass-trained classifier (the deployment path), then lesion recall, then PSNR gain. If none meet the criteria the best variant is carried forward and restoration is NOT claimed",
+ "any_variant_meets_criteria": false
+}

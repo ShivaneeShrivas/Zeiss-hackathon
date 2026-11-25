@@ -1,0 +1,943 @@
+{
+ "psf_mtf": {
+  "freqs_lp_mm": [
+   10,
+   25
+  ],
+  "px_um": 10.0,
+  "nyquist_lp_mm": 50.0,
+  "metrics": {
+   "glass": {
+    "by_field": [
+     {
+      "field": 0.0,
+      "spot_rms_um": [
+       10.682915144576722,
+       10.084091902203614,
+       12.08039871765218
+      ],
+      "mtf_tan": [
+       0.8719330098227805,
+       0.39907981158840183
+      ],
+      "mtf_sag": [
+       0.8719174112889775,
+       0.3990190866105967
+      ],
+      "ee80_um": 15.811388300841898,
+      "lateral_colour_um": 0.0
+     },
+     {
+      "field": 0.25,
+      "spot_rms_um": [
+       9.614760249035937,
+       9.048684997071131,
+       10.985095250600159
+      ],
+      "mtf_tan": [
+       0.8865345322104983,
+       0.45692883144866075
+      ],
+      "mtf_sag": [
+       0.8937018095039978,
+       0.4838255892503098
+      ],
+      "ee80_um": 15.811388300841863,
+      "lateral_colour_um": 0.0
+     },
+     {
+      "field": 0.5,
+      "spot_rms_um": [
+       7.074666545084586,
+       6.7044589107358155,
+       8.193913193674055
+      ],
+      "mtf_tan": [
+       0.9148216930947763,
+       0.5661620832428832
+      ],
+      "mtf_sag": [
+       0.9372600518377575,
+       0.6533975075102403
+      ],
+      "ee80_um": 7.071067811865602,
+      "lateral_colour_um": 14.142135623730951
+     },
+     {
+      "field": 0.75,
+      "spot_rms_um": [
+       7.319312329077826,
+       7.555553436889144,
+       7.12875053015835
+      ],
+      "mtf_tan": [
+       0.9055406250443621,
+       0.5652272574388536
+      ],
+      "mtf_sag": [
+       0.919948517754181,
+       0.5878527088610394
+      ],
+      "ee80_um": 7.071067811865928,
+      "lateral_colour_um": 14.142135623730951
+     },
+     {
+      "field": 1.0,
+      "spot_rms_um": [
+       14.475632533616906,
+       14.970198363381932,
+       13.282845700627334
+      ],
+      "mtf_tan": [
+       0.8054560560266493,
+       0.5462841060310168
+      ],
+      "mtf_sag": [
+       0.770546911833546,
+       0.2762159772780964
+      ],
+      "ee80_um": 15.811388300842042,
+      "lateral_colour_um": 22.360679774997898
+     }
+    ],
+    "distortion_pct": -1.3861659300764184
+   },
+   "polymer": {
+    "by_field": [
+     {
+      "field": 0.0,
+      "spot_rms_um": [
+       25.468228688546546,
+       13.789399404898054,
+       14.544644159788161
+      ],
+      "mtf_tan": [
+       0.7950694033788253,
+       0.11123048909937389
+      ],
+      "mtf_sag": [
+       0.7950814988057031,
+       0.11130094625294326
+      ],
+      "ee80_um": 15.81138830084193,
+      "lateral_colour_um": 22.360679774997898
+     },
+     {
+      "field": 0.25,
+      "spot_rms_um": [
+       22.26315075082121,
+       10.800165233585876,
+       18.130975433850605
+      ],
+      "mtf_tan": [
+       0.8778841656200703,
+       0.4486515187844906
+      ],
+      "mtf_sag": [
+       0.8428705984940074,
+       0.2878023149585895
+      ],
+      "ee80_um": 15.811388300841964,
+      "lateral_colour_um": 22.360679774997898
+     },
+     {
+      "field": 0.5,
+      "spot_rms_um": [
+       14.175794860974383,
+       7.5921356188585785,
+       28.899175529879685
+      ],
+      "mtf_tan": [
+       0.9054290120379631,
+       0.5780550752045026
+      ],
+      "mtf_sag": [
+       0.933873828136223,
+       0.6402149634505732
+      ],
+      "ee80_um": 7.071067811865727,
+      "lateral_colour_um": 30.0
+     },
+     {
+      "field": 0.75,
+      "spot_rms_um": [
+       15.194292042204037,
+       21.691417720520217,
+       46.54718574745836
+      ],
+      "mtf_tan": [
+       0.45286068886612474,
+       0.13973706248102608
+      ],
+      "mtf_sag": [
+       0.8554595748333358,
+       0.3883389023967357
+      ],
+      "ee80_um": 25.495097567964148,
+      "lateral_colour_um": 50.99019513592785
+     },
+     {
+      "field": 1.0,
+      "spot_rms_um": [
+       35.73265598384655,
+       45.04936974532396,
+       70.39746922493916
+      ],
+      "mtf_tan": [
+       0.25269863082214056,
+       0.039474973301385226
+      ],
+      "mtf_sag": [
+       0.4618717697912426,
+       0.11954909442939711
+      ],
+      "ee80_um": 55.22680508593651,
+      "lateral_colour_um": 50.0
+     }
+    ],
+    "distortion_pct": -0.8442273515942618
+   }
+  },
+  "verdict": {
+   "mtf_ratio_ok": false,
+   "mtf_ratio_min": 0.19334231200438395,
+   "mtf_ratio_by_field_freq": [
+    [
+     0.9118619825034985,
+     0.27882689207375777
+    ],
+    [
+     0.9665878197143569,
+     0.7828332427031305
+    ],
+    [
+     0.9931002479813259,
+     0.9989426083745104
+    ],
+    [
+     0.7166957244641603,
+     0.45796994164446336
+    ],
+    [
+     0.45340676076491476,
+     0.19334231200438395
+    ]
+   ],
+   "mtf_abs_ok": true,
+   "ee80_ok": false,
+   "distortion_ok": true,
+   "rel_illum_edge": 0.9406018657828263,
+   "rel_illum_ok": true,
+   "overall_pass": false
+  },
+  "thresholds": {
+   "mtf_freq_lp_mm": [
+    10,
+    25
+   ],
+   "mtf_min_ratio_to_glass": 0.7,
+   "mtf_abs_min": 0.2,
+   "ee80_radius_max_um": 40,
+   "distortion_max_pct": 5.0,
+   "rel_illum_min": 0.6
+  },
+  "label": "Simulated (geometric ray-trace PSF + diffraction core; wavefront-level MTF not modelled)"
+ },
+ "manufacturing": {
+  "glass": {
+   "pass_": true,
+   "elements": [
+    {
+     "element": 1,
+     "material": "N-BK7",
+     "semi_aperture_mm": 3.4743313166835597,
+     "centre_thickness_mm": 4.0,
+     "edge_thickness_mm": 3.690451742372585,
+     "min_thickness_mm": 3.690451742372585,
+     "thickness_ratio": 1.083878148052522,
+     "max_slope_deg": 7.635326560799996,
+     "asphere_departure_mm": 0.0,
+     "air_gap_after_mm": 2,
+     "violations": []
+    },
+    {
+     "element": 2,
+     "material": "N-SF5",
+     "semi_aperture_mm": 3.9482027633189305,
+     "centre_thickness_mm": 2.5,
+     "edge_thickness_mm": 2.9884692756043023,
+     "min_thickness_mm": 2.5,
+     "thickness_ratio": 1.195387710241721,
+     "max_slope_deg": 7.32204207997919,
+     "asphere_departure_mm": 0.0,
+     "air_gap_after_mm": 2,
+     "violations": []
+    },
+    {
+     "element": 3,
+     "material": "N-BK7",
+     "semi_aperture_mm": 4.971151319235293,
+     "centre_thickness_mm": 4.0,
+     "edge_thickness_mm": 3.357369507910488,
+     "min_thickness_mm": 3.357369507910488,
+     "thickness_ratio": 1.1914089261177163,
+     "max_slope_deg": 10.973398734235621,
+     "asphere_departure_mm": 0.0,
+     "air_gap_after_mm": 2,
+     "violations": []
+    },
+    {
+     "element": 4,
+     "material": "N-BK7",
+     "semi_aperture_mm": 5.427384974018465,
+     "centre_thickness_mm": 3.0,
+     "edge_thickness_mm": 2.336568279644508,
+     "min_thickness_mm": 2.336568279644508,
+     "thickness_ratio": 1.2839342321536729,
+     "max_slope_deg": 7.241383987551225,
+     "asphere_departure_mm": 0.0,
+     "air_gap_after_mm": null,
+     "violations": []
+    }
+   ]
+  },
+  "polymer": {
+   "pass_": true,
+   "elements": [
+    {
+     "element": 1,
+     "material": "PMMA",
+     "semi_aperture_mm": 3.4448358666186363,
+     "centre_thickness_mm": 4.0,
+     "edge_thickness_mm": 3.6067745087208367,
+     "min_thickness_mm": 3.6067745087208367,
+     "thickness_ratio": 1.1090241406354575,
+     "max_slope_deg": 9.773056279299889,
+     "asphere_departure_mm": 0.0011481891132832378,
+     "air_gap_after_mm": 3,
+     "violations": []
+    },
+    {
+     "element": 2,
+     "material": "Polycarbonate",
+     "semi_aperture_mm": 3.970987993082274,
+     "centre_thickness_mm": 3.0,
+     "edge_thickness_mm": 2.975823562835659,
+     "min_thickness_mm": 2.975823562835659,
+     "thickness_ratio": 1.008124284472465,
+     "max_slope_deg": 10.424042844572854,
+     "asphere_departure_mm": 0.008211327083321673,
+     "air_gap_after_mm": null,
+     "violations": []
+    }
+   ]
+  }
+ },
+ "tolerance": {
+  "n_draws": 800,
+  "glass_nominal_um": [
+   10.574815459010829,
+   9.101205004227822,
+   19.30960127715706
+  ],
+  "polymer_nominal_um": [
+   18.76342776253695,
+   19.603228679131128,
+   56.76778226623455
+  ],
+  "grades": {
+   "polymer_commercial": "Apollo Optical commercial: radius +-1%, CT +-0.025 mm, concentricity 0.025 mm (limit = 2 sigma); tilt, asphere ASSUMED",
+   "polymer_precision": "Apollo Optical precision: radius +-0.5%, CT +-0.015 mm, concentricity 0.015 mm (limit = 2 sigma); tilt, asphere ASSUMED",
+   "glass_ground": "ASSUMED typical precision ground/polished glass; replace with supplier data"
+  },
+  "runs": {
+   "glass_ground": {
+    "mean_spot_um": [
+     10.70381600258308,
+     9.240483861835491,
+     19.259403613218954
+    ],
+    "p95_spot_um": [
+     12.86252389833744,
+     10.473936841019967,
+     20.896001884666692
+    ],
+    "robustness_yield_125pct_of_own_nominal": {
+     "yield_": 0.9725,
+     "lo": 0.9587132918999337,
+     "hi": 0.9817705049077956,
+     "n": 800
+    },
+    "quality_floor_yield": {
+     "2x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "3x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "4x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "6x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "8x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     }
+    }
+   },
+   "polymer_commercial": {
+    "mean_spot_um": [
+     20.310932429504504,
+     22.56756911887482,
+     57.643030431191825
+    ],
+    "p95_spot_um": [
+     31.071410610691206,
+     31.798993464373694,
+     74.8714221439777
+    ],
+    "robustness_yield_125pct_of_own_nominal": {
+     "yield_": 0.70875,
+     "lo": 0.6763278063732975,
+     "hi": 0.7391769398354083,
+     "n": 800
+    },
+    "quality_floor_yield": {
+     "2x_glass": {
+      "yield_": 0.0,
+      "lo": 0.0,
+      "hi": 0.004779050997111869,
+      "n": 800
+     },
+     "3x_glass": {
+      "yield_": 0.5375,
+      "lo": 0.5028523315082782,
+      "hi": 0.5717892396669384,
+      "n": 800
+     },
+     "4x_glass": {
+      "yield_": 0.955,
+      "lo": 0.9383304281895879,
+      "hi": 0.9673206354030401,
+      "n": 800
+     },
+     "6x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "8x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     }
+    }
+   },
+   "polymer_precision": {
+    "mean_spot_um": [
+     18.894028396359175,
+     20.44133873208019,
+     56.96123557269936
+    ],
+    "p95_spot_um": [
+     22.455738769695262,
+     23.23794901535532,
+     65.38996123090985
+    ],
+    "robustness_yield_125pct_of_own_nominal": {
+     "yield_": 0.9525,
+     "lo": 0.9354748186999311,
+     "hi": 0.9652001401476826,
+     "n": 800
+    },
+    "quality_floor_yield": {
+     "2x_glass": {
+      "yield_": 0.0,
+      "lo": 0.0,
+      "hi": 0.004779050997111869,
+      "n": 800
+     },
+     "3x_glass": {
+      "yield_": 0.6175,
+      "lo": 0.5833364183865161,
+      "hi": 0.6505405046291627,
+      "n": 800
+     },
+     "4x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "6x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     },
+     "8x_glass": {
+      "yield_": 1.0,
+      "lo": 0.9952209490028883,
+      "hi": 1.0,
+      "n": 800
+     }
+    }
+   }
+  },
+  "sensitivity_polymer_commercial": {
+   "nominal_worst_um": 56.76778226623455,
+   "by_group": {
+    "radius": {
+     "mean_increase_um": 1.1555007594928313,
+     "p95_increase_um": 17.023644447245857
+    },
+    "thickness_gap": {
+     "mean_increase_um": 0.058983450051400155,
+     "p95_increase_um": 1.078234173038716
+    },
+    "asphere": {
+     "mean_increase_um": 0.0048511090768101894,
+     "p95_increase_um": 0.11580684989004908
+    },
+    "decenter": {
+     "mean_increase_um": 0.020434360793281314,
+     "p95_increase_um": 0.13620228523249267
+    },
+    "tilt": {
+     "mean_increase_um": -0.011167966010468433,
+     "p95_increase_um": 0.4175103462970995
+    }
+   }
+  },
+  "primary_rule": "every field RMS spot <= quality_floor_multiple x glass nominal spot",
+  "required_yield": 0.9,
+  "claim_manufacturable_at_predeclared_floor": false,
+  "note": "Index variation and form error are NOT modelled. Grades are published limits / 2 (Apollo Optical), tilt and asphere ASSUMED."
+ },
+ "materials": {
+  "rows": [
+   {
+    "pair": "PMMA+COC_Topas",
+    "spot_um": [
+     19.1783106723919,
+     24.05751638582963,
+     47.52409216489099
+    ],
+    "mean_spot_um": 30.253306407704173,
+    "mass_g": 0.30939207000766267,
+    "nonoptical_score": 0.7743749999999999,
+    "hard_fail": [],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.13900920976868866,
+    "composite": 0.8364425001755071
+   },
+   {
+    "pair": "PMMA+Zeonex",
+    "spot_um": [
+     19.56365004663201,
+     25.887960594356564,
+     50.60380104858172
+    ],
+    "mean_spot_um": 32.0184705631901,
+    "mass_g": 0.3097131191333441,
+    "nonoptical_score": 0.78375,
+    "hard_fail": [],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.13591889411372093,
+    "composite": 0.81115617501943
+   },
+   {
+    "pair": "COC_Topas+COC_Topas",
+    "spot_um": [
+     18.137007946008328,
+     23.024201679565454,
+     62.805725311444974
+    ],
+    "mean_spot_um": 34.65564497900625,
+    "mass_g": 0.2870990730296086,
+    "nonoptical_score": 0.8237499999999999,
+    "hard_fail": [],
+    "single_material": true,
+    "thermal_defocus_mm_per_20K": 0.14255063976578605,
+    "composite": 0.7892862657036694
+   },
+   {
+    "pair": "PMMA+PMMA",
+    "spot_um": [
+     18.16888788681931,
+     39.94658571636109,
+     48.07494741367607
+    ],
+    "mean_spot_um": 35.396807005618825,
+    "mass_g": 0.35161990906784435,
+    "nonoptical_score": 0.725,
+    "hard_fail": [],
+    "single_material": true,
+    "thermal_defocus_mm_per_20K": 0.13683718262207564,
+    "composite": 0.7401589532615198
+   },
+   {
+    "pair": "Zeonex+Zeonex",
+    "spot_um": [
+     19.28992176641503,
+     29.75743995830336,
+     77.54828325530366
+    ],
+    "mean_spot_um": 42.19854832667402,
+    "mass_g": 0.2804239669606565,
+    "nonoptical_score": 0.8424999999999999,
+    "hard_fail": [],
+    "single_material": true,
+    "thermal_defocus_mm_per_20K": 0.12160202428076912,
+    "composite": 0.7146004204480485
+   },
+   {
+    "pair": "Zeonex+COC_Topas",
+    "spot_um": [
+     18.60436237293627,
+     31.704431232386955,
+     75.05479066649734
+    ],
+    "mean_spot_um": 41.78786142394019,
+    "mass_g": 0.2859685193407975,
+    "nonoptical_score": 0.8331249999999999,
+    "hard_fail": [],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.12246318591618058,
+    "composite": 0.7145614394344366
+   },
+   {
+    "pair": "PMMA+Polycarbonate",
+    "spot_um": [
+     25.99031353977853,
+     24.530076957961906,
+     45.31974674419805
+    ],
+    "mean_spot_um": 31.946712413979498,
+    "mass_g": 0.3585248469272933,
+    "nonoptical_score": 0.5729166666666666,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.14123297632198917,
+    "composite": null
+   },
+   {
+    "pair": "PMMA+Polystyrene",
+    "spot_um": [
+     17.69774590596711,
+     22.58618956049449,
+     51.10582144176969
+    ],
+    "mean_spot_um": 30.463252302743765,
+    "mass_g": 0.32066143345875814,
+    "nonoptical_score": 0.5822916666666667,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.1422439296278502,
+    "composite": null
+   },
+   {
+    "pair": "Polycarbonate+Polycarbonate",
+    "spot_um": [
+     37.88819976173249,
+     43.66294444802978,
+     79.20284002693988
+    ],
+    "mean_spot_um": 53.58466141223405,
+    "mass_g": 0.3202885250246691,
+    "nonoptical_score": 0.4208333333333333,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": true,
+    "thermal_defocus_mm_per_20K": 0.15761697152539647,
+    "composite": null
+   },
+   {
+    "pair": "Polycarbonate+Zeonex",
+    "spot_um": [
+     31.56696107619677,
+     50.45511855117647,
+     51.150598585286
+    ],
+    "mean_spot_um": 44.39089273755308,
+    "mass_g": 0.3102723439507218,
+    "nonoptical_score": 0.6316666666666666,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.15114412345109984,
+    "composite": null
+   },
+   {
+    "pair": "Polycarbonate+COC_Topas",
+    "spot_um": [
+     47.39824063136044,
+     52.86343800517659,
+     138.62341053234536
+    ],
+    "mean_spot_um": 79.62836305629413,
+    "mass_g": 0.2946783276435836,
+    "nonoptical_score": 0.6222916666666666,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.1585098438207342,
+    "composite": null
+   },
+   {
+    "pair": "Polycarbonate+Polystyrene",
+    "spot_um": [
+     35.40824810187777,
+     44.51209123440827,
+     116.17320423471168
+    ],
+    "mean_spot_um": 65.3645145236659,
+    "mass_g": 0.30337902831091856,
+    "nonoptical_score": 0.4302083333333333,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.15401638227420378,
+    "composite": null
+   },
+   {
+    "pair": "Zeonex+Polystyrene",
+    "spot_um": [
+     15.815194267207959,
+     24.02483946128533,
+     66.15783471969715
+    ],
+    "mean_spot_um": 35.332622816063484,
+    "mass_g": 0.28628721079896846,
+    "nonoptical_score": 0.6410416666666666,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.12269795921426975,
+    "composite": null
+   },
+   {
+    "pair": "COC_Topas+Polystyrene",
+    "spot_um": [
+     19.081227676438566,
+     20.05799207105963,
+     40.53172820474882
+    ],
+    "mean_spot_um": 26.556982650749006,
+    "mass_g": 0.2930786784189382,
+    "nonoptical_score": 0.6316666666666666,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": false,
+    "thermal_defocus_mm_per_20K": 0.14512802707985425,
+    "composite": null
+   },
+   {
+    "pair": "Polystyrene+Polystyrene",
+    "spot_um": [
+     35.71616981320264,
+     46.02645440126191,
+     119.07389652048755
+    ],
+    "mean_spot_um": 66.93884024498404,
+    "mass_g": 0.2809343079292783,
+    "nonoptical_score": 0.4395833333333333,
+    "hard_fail": [
+     "high stress birefringence (hurts fundus contrast)"
+    ],
+    "single_material": true,
+    "thermal_defocus_mm_per_20K": 0.18016698570368553,
+    "composite": null
+   }
+  ],
+  "screen": "Tmax>=70 C and no high-birefringence resin; composite=0.6 optical+0.4 non-optical",
+  "database": {
+   "PMMA": {
+    "nd": 1.491,
+    "vd": 57.4,
+    "dndt": -8.5,
+    "cte": 7.0,
+    "water": 0.3,
+    "rho": 1.19,
+    "biref": 1,
+    "tmax": 80,
+    "scratch": 3,
+    "uv": 3,
+    "catalog": "PMMA"
+   },
+   "Polycarbonate": {
+    "nd": 1.585,
+    "vd": 29.9,
+    "dndt": -11.8,
+    "cte": 6.5,
+    "water": 0.15,
+    "rho": 1.2,
+    "biref": 3,
+    "tmax": 120,
+    "scratch": 1,
+    "uv": 1,
+    "catalog": "Polycarbonate"
+   },
+   "Zeonex": {
+    "nd": 1.53,
+    "vd": 55.8,
+    "dndt": -8.0,
+    "cte": 6.0,
+    "water": 0.01,
+    "rho": 1.01,
+    "biref": 1,
+    "tmax": 120,
+    "scratch": 2,
+    "uv": 2,
+    "catalog": "Zeonex"
+   },
+   "COC_Topas": {
+    "nd": 1.533,
+    "vd": 56.0,
+    "dndt": -10.1,
+    "cte": 6.0,
+    "water": 0.01,
+    "rho": 1.02,
+    "biref": 1,
+    "tmax": 105,
+    "scratch": 2,
+    "uv": 2,
+    "catalog": null
+   },
+   "Polystyrene": {
+    "nd": 1.59,
+    "vd": 30.9,
+    "dndt": -14.0,
+    "cte": 7.0,
+    "water": 0.05,
+    "rho": 1.05,
+    "biref": 3,
+    "tmax": 75,
+    "scratch": 1,
+    "uv": 1,
+    "catalog": null
+   }
+  },
+  "label": "Optical numbers Simulated; material properties from Apollo Optical table + typical datasheet values (Estimated)"
+ },
+ "fov": {
+  "rows": [
+   {
+    "full_fov_deg": 20.0,
+    "glass": {
+     "spot_before_um": [
+      10.574815459010829,
+      9.101205004227822,
+      19.30960127715706
+     ],
+     "spot_after_um": [
+      8.894786635247192,
+      8.022364434884791,
+      16.24082441893967
+     ],
+     "converged_to_better": true
+    },
+    "polymer": {
+     "spot_before_um": [
+      18.76342776253695,
+      19.603228679131128,
+      56.76778226623455
+     ],
+     "spot_after_um": [
+      24.661177855090244,
+      21.55789275538911,
+      33.01146032541043
+     ],
+     "converged_to_better": true
+    }
+   },
+   {
+    "full_fov_deg": 25.0,
+    "glass": {
+     "spot_before_um": [
+      10.574815459010829,
+      9.63447363357122,
+      30.916467948095534
+     ],
+     "spot_after_um": [
+      10.138517397247485,
+      9.345664603682431,
+      20.78625151368618
+     ],
+     "converged_to_better": true
+    },
+    "polymer": {
+     "spot_before_um": [
+      18.76342776253695,
+      24.278781124803363,
+      89.55033593487826
+     ],
+     "spot_after_um": [
+      31.642136186935712,
+      26.719246614111615,
+      43.09935212782743
+     ],
+     "converged_to_better": true
+    }
+   },
+   {
+    "full_fov_deg": 30.0,
+    "glass": {
+     "spot_before_um": [
+      10.574815459010829,
+      11.510208873234765,
+      45.34780112706618
+     ],
+     "spot_after_um": [
+      11.200394692265405,
+      9.79642427580339,
+      25.666290182364094
+     ],
+     "converged_to_better": true
+    },
+    "polymer": {
+     "spot_before_um": [
+      18.76342776253695,
+      32.39704187576129,
+      130.61377695612467
+     ],
+     "spot_after_um": [
+      35.95686949510473,
+      30.93682070325899,
+      48.37636252125049
+     ],
+     "converged_to_better": true
+    }
+   }
+  ],
+  "note": "Wider single-capture designs re-optimised from the 20 deg prescription; stitched montage handled by frugaloptix/montage.py"
+ }
+}

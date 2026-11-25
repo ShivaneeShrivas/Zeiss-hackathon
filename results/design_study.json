@@ -1,0 +1,243 @@
+{
+ "floor_multiples": [
+  1.5,
+  2,
+  3,
+  4,
+  6
+ ],
+ "materials": [
+  {
+   "name": "Zeonex+Zeonex",
+   "spot_um": [
+    17.061715587989482,
+    19.477118005987823,
+    48.8577499261652
+   ],
+   "mass_g": 0.27952153422078424,
+   "weighted_spot_um": 24.2981950397176,
+   "single_material": true,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.000978325369772745,
+   "pareto": true
+  },
+  {
+   "name": "PMMA+Polycarbonate",
+   "spot_um": [
+    19.65006057130056,
+    19.679972054189218,
+    53.32823355536853
+   ],
+   "mass_g": 0.3491790656834212,
+   "weighted_spot_um": 26.4690134886242,
+   "single_material": false,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0012221267298919741,
+   "pareto": false
+  },
+  {
+   "name": "Zeonex+Polycarbonate",
+   "spot_um": [
+    15.423876630091632,
+    19.091403002189605,
+    75.48594754676704
+   ],
+   "mass_g": 0.2892623786884755,
+   "weighted_spot_um": 28.793984107449443,
+   "single_material": false,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0010124183254096642,
+   "pareto": false
+  },
+  {
+   "name": "PMMA+PMMA",
+   "spot_um": [
+    16.553124946274338,
+    35.1051142943466,
+    58.18737055357115
+   ],
+   "mass_g": 0.3379808486569748,
+   "weighted_spot_um": 31.177058912221696,
+   "single_material": true,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0011829329702994118,
+   "pareto": false
+  },
+  {
+   "name": "PMMA+Zeonex",
+   "spot_um": [
+    20.998229350927172,
+    40.63936155243214,
+    65.24663783295924
+   ],
+   "mass_g": 0.29725502307047047,
+   "weighted_spot_um": 36.51505253656132,
+   "single_material": false,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0010403925807466465,
+   "pareto": false
+  }
+ ],
+ "xray": [
+  {
+   "element": 1,
+   "material": "N-BK7",
+   "spot_without_um": [
+    23.69414101610119,
+    33.351385706281896,
+    65.78618244981782
+   ],
+   "spot_increase_um": 23.587149015786302,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 2.2304436447745366,
+   "value_per_cost": 94.34859606314521,
+   "flag": "keep"
+  },
+  {
+   "element": 2,
+   "material": "N-SF5",
+   "spot_without_um": [
+    23.54597698403584,
+    23.56460883595604,
+    36.387095902002905
+   ],
+   "spot_increase_um": 14.300587437927414,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 1.53174403185772,
+   "value_per_cost": 57.202349751709654,
+   "flag": "keep"
+  },
+  {
+   "element": 3,
+   "material": "N-BK7",
+   "spot_without_um": [
+    38.02472079326498,
+    34.748525551758924,
+    67.19533907351772
+   ],
+   "spot_increase_um": 30.978513454214315,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 2.0893785546891377,
+   "value_per_cost": 123.91405381685726,
+   "flag": "keep"
+  },
+  {
+   "element": 4,
+   "material": "N-BK7",
+   "spot_without_um": [
+    18.813170498868317,
+    20.082481346642812,
+    33.56607189888205
+   ],
+   "spot_increase_um": 10.372706057444459,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 1.2602916471735188,
+   "value_per_cost": 41.490824229777836,
+   "flag": "keep"
+  }
+ ],
+ "yields": {
+  "polymer_molded": {
+   "1.5": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "2": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "3": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 0.975,
+    "2": 0.675,
+    "4": 0.275
+   },
+   "4": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 0.925,
+    "4": 0.6
+   },
+   "6": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "4": 0.775
+   }
+  },
+  "glass_ground": {
+   "1.5": {
+    "1": 1.0,
+    "4": 0.825
+   },
+   "2": {
+    "1": 1.0,
+    "4": 1.0
+   },
+   "3": {
+    "1": 1.0,
+    "4": 1.0
+   },
+   "4": {
+    "1": 1.0,
+    "4": 1.0
+   },
+   "6": {
+    "1": 1.0,
+    "4": 1.0
+   }
+  }
+ },
+ "thermal": {
+  "glass": {
+   "defocus_mm": {
+    "15": 4.6265080907356354e-07,
+    "35": -4.6265080907356354e-07
+   },
+   "defocus_rms_um": {
+    "15": 2.3132540453678177e-05,
+    "35": 2.3132540453678177e-05
+   },
+   "label": "Estimated: literature-typical dn/dT and expansion, housing expansion ignored; verify against datasheets"
+  },
+  "polymer": {
+   "defocus_mm": {
+    "15": -0.061378422632394854,
+    "35": 0.061378422632394854
+   },
+   "defocus_rms_um": {
+    "15": 3.0689211316197427,
+    "35": 3.0689211316197427
+   },
+   "label": "Estimated: literature-typical dn/dT and expansion, housing expansion ignored; verify against datasheets"
+  }
+ },
+ "floor_um": [
+  21.149630918021657,
+  18.202410008455644,
+  38.61920255431412
+ ],
+ "tolerance_grades": {
+  "glass_ground": {
+   "r_rel": 0.0005,
+   "t_mm": 0.01,
+   "a_rel": 0.0
+  },
+  "polymer_molded": {
+   "r_rel": 0.003,
+   "t_mm": 0.03,
+   "a_rel": 0.02
+  }
+ },
+ "tol_note": "process grades are ASSUMED (Estimated)",
+ "runtime_s": 807
+}

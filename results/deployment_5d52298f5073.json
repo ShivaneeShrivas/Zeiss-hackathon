@@ -1,0 +1,58 @@
+{
+ "label": "5d52298f5073",
+ "machine": "Linux-6.18.55+-x86_64-with-glibc2.39",
+ "cpu": "x86_64",
+ "threads": 1,
+ "image_px": 256,
+ "params": 118947,
+ "rows": {
+  "torch_fp32": {
+   "median_ms": 70.74600450050639,
+   "p90_ms": 72.63515810045647,
+   "psnr_db": 39.96320603019941,
+   "psnr_gain_over_raw_db": 7.591607662768666
+  },
+  "torch_pruned30": {
+   "median_ms": 70.26808950104169,
+   "p90_ms": 73.89912479957275,
+   "psnr_db": 39.35989365460882,
+   "note": "unstructured 30% weight pruning: no speed-up without sparse kernels",
+   "psnr_gain_over_raw_db": 6.988295287178076
+  },
+  "onnx_fp32": {
+   "median_ms": 64.27509900004225,
+   "p90_ms": 65.66442480052501,
+   "psnr_db": 39.96318216344795,
+   "size_mb": 0.49771,
+   "psnr_gain_over_raw_db": 7.591583796017204,
+   "peak_rss_mb_process": 989.08203125
+  },
+  "onnx_int8_dynamic": {
+   "median_ms": 107.75770450072741,
+   "p90_ms": 110.6840442009343,
+   "psnr_db": 39.888998709636205,
+   "size_mb": 0.167396,
+   "psnr_gain_over_raw_db": 7.5174003422054625
+  }
+ },
+ "raw_polymer_psnr_db": 32.37159836743074,
+ "power_w": "NOT measured (needs a USB power meter on the board)",
+ "board_estimate": {
+  "label": "Estimated, not measured",
+  "raspberry_pi_zero2w_ms": [
+   431.03081800290965,
+   862.0616360058193
+  ],
+  "raspberry_pi4_ms": [
+   161.63655675109112,
+   323.27311350218224
+  ],
+  "basis": "typical single-core slow-down factors vs a desktop-class core; run this script on the board to replace"
+ },
+ "not_done": [
+  "knowledge distillation",
+  "structured pruning",
+  "energy per scan",
+  "full-pipeline (IQA + ensemble + classifier) timing on the board"
+ ]
+}

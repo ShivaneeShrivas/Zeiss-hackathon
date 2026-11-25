@@ -1,0 +1,14 @@
+{
+ "n_images": 20,
+ "tiles_per_image": 9,
+ "median_error_px": 0.0,
+ "share_within_1p5px": 0.6722222222222223,
+ "mean_abs_error_intensity": 0.017449671798950805,
+ "residual_mean_when_ok": 0.04247863745312083,
+ "residual_mean_when_misregistered": 0.20431670175460115,
+ "label": "Simulated on synthetic fundus tiles. Registration fails on low-texture tiles; the residual check is the flag for that.",
+ "comparison": {
+  "single_capture_30deg": "one exposure, larger distortion/blur at edge (optics_extended fov)",
+  "montage_2x2_to_3x3": "9 captures, 4-5x capture time, needs operator guidance, no wide-angle optics"
+ }
+}

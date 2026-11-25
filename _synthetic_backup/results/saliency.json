@@ -1,0 +1,15 @@
+{
+ "field_profile": [
+  0.8695732951164246,
+  0.6030678153038025,
+  0.31717824935913086
+ ],
+ "field_weights": [
+  1.4575324996321788,
+  1.0108301913408955,
+  0.5316373090269255
+ ],
+ "n_images": 195,
+ "rule": "weights = profile / mean, clipped to [0.5, 2.0]; abnormal train+val images only",
+ "label": "Measured (Grad-CAM on the frozen classifier)"
+}

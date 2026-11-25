@@ -1,0 +1,196 @@
+{
+ "floor_multiples": [
+  1.5,
+  2,
+  3,
+  4,
+  6
+ ],
+ "materials": [
+  {
+   "name": "PMMA+Polycarbonate",
+   "spot_um": [
+    18.76342776253695,
+    19.603228679131128,
+    56.76778226623455
+   ],
+   "mass_g": 0.346222491879401,
+   "weighted_spot_um": 25.781237389490368,
+   "single_material": false,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0012117787215779035,
+   "pareto": true
+  },
+  {
+   "name": "PMMA+PMMA",
+   "spot_um": [
+    15.961893260319721,
+    28.27141638988062,
+    59.631682503255156
+   ],
+   "mass_g": 0.3319826068167462,
+   "weighted_spot_um": 27.84833554673852,
+   "single_material": true,
+   "cost_base": 4.658823529411765,
+   "co2_base": 0.0011619391238586116,
+   "pareto": true
+  }
+ ],
+ "xray": [
+  {
+   "element": 1,
+   "material": "N-BK7",
+   "spot_without_um": [
+    23.69414101610119,
+    33.351385706281896,
+    65.78618244981782
+   ],
+   "spot_increase_um": 22.781114239742557,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 2.4157075683576017,
+   "value_per_cost": 91.12445695897023,
+   "flag": "keep"
+  },
+  {
+   "element": 2,
+   "material": "N-SF5",
+   "spot_without_um": [
+    23.54597698403584,
+    23.56460883595604,
+    36.387095902002905
+   ],
+   "spot_increase_um": 14.201656010214585,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 1.7063183818443282,
+   "value_per_cost": 56.80662404085834,
+   "flag": "keep"
+  },
+  {
+   "element": 3,
+   "material": "N-BK7",
+   "spot_without_um": [
+    38.02472079326498,
+    34.748525551758924,
+    67.19533907351772
+   ],
+   "spot_increase_um": 30.46401995192347,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 2.1466215923232617,
+   "value_per_cost": 121.85607980769387,
+   "flag": "keep"
+  },
+  {
+   "element": 4,
+   "material": "N-BK7",
+   "spot_without_um": [
+    18.813170498868317,
+    20.082481346642812,
+    33.56607189888205
+   ],
+   "spot_increase_um": 10.229049186008911,
+   "cost_share": 0.25,
+   "tol_sensitivity_um_per_0p5pct": 1.375249358801151,
+   "value_per_cost": 40.916196744035645,
+   "flag": "keep"
+  }
+ ],
+ "yields": {
+  "polymer_molded": {
+   "1.5": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "2": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0
+   },
+   "3": {
+    "0.25": 0.75,
+    "0.5": 0.7,
+    "1": 0.65,
+    "2": 0.65,
+    "4": 0.4
+   },
+   "4": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 0.95,
+    "4": 0.65
+   },
+   "6": {
+    "0.25": 1.0,
+    "0.5": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "4": 0.95
+   }
+  },
+  "glass_ground": {
+   "1.5": {
+    "1": 1.0
+   },
+   "2": {
+    "1": 1.0
+   },
+   "3": {
+    "1": 1.0
+   },
+   "4": {
+    "1": 1.0
+   },
+   "6": {
+    "1": 1.0
+   }
+  }
+ },
+ "thermal": {
+  "glass": {
+   "defocus_mm": {
+    "15": 4.6265080907356354e-07,
+    "35": -4.6265080907356354e-07
+   },
+   "defocus_rms_um": {
+    "15": 2.3132540453678177e-05,
+    "35": 2.3132540453678177e-05
+   },
+   "label": "Estimated: literature-typical dn/dT and expansion, housing expansion ignored; verify against datasheets"
+  },
+  "polymer": {
+   "defocus_mm": {
+    "15": -0.07034222266772461,
+    "35": 0.07034222266772461
+   },
+   "defocus_rms_um": {
+    "15": 3.5171111333862304,
+    "35": 3.5171111333862304
+   },
+   "label": "Estimated: literature-typical dn/dT and expansion, housing expansion ignored; verify against datasheets"
+  }
+ },
+ "floor_um": [
+  21.149630918021657,
+  18.202410008455644,
+  38.61920255431412
+ ],
+ "tolerance_grades": {
+  "glass_ground": {
+   "r_rel": 0.0005,
+   "t_mm": 0.01,
+   "a_rel": 0.0
+  },
+  "polymer_molded": {
+   "r_rel": 0.003,
+   "t_mm": 0.03,
+   "a_rel": 0.02
+  }
+ },
+ "tol_note": "process grades are ASSUMED (Estimated)",
+ "runtime_s": 225
+}
