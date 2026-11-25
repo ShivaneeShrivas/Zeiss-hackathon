@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FrugalOptiX · Lens Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <div class="logo"><img src="assets/zeiss_logo.png" alt="ZEISS logo"></div>
+    <div class="brand"><b>FrugalOptiX</b><span>Replace glass with code · Team Cortex</span></div>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
+    <div class="logo dark"><img src="assets/iitk_logo.png" alt="IIT Kanpur logo"></div>
+  </div>
+</header>
+<div id="banner" class="banner" hidden></div>
+
+<main>
+<!-- 0 HOME -->
+<section class="pane" id="p-start" data-title="Home">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">ZEISS India Campus Hackathon · BeyondCode’26 · Theme 1</p>
+      <h1>Can <em>code</em> replace expensive glass?</h1>
+      <p class="lead">Eye screening cameras use heavy, costly glass lenses. We swap most of that glass for two light molded plastic lenses and let a tiny AI sharpen the picture. This page lets you test that idea yourself.</p>
+      <div class="cta"><button class="btn" data-go="p-lab">Try the Lens Lab</button><button class="btn ghost" data-go="p-evidence">Jump to the evidence</button></div>
+    </div>
+    <div class="hero-vis"><svg id="heroSvg" viewBox="0 0 520 300" role="img" aria-label="Light through glass lens, then polymer lens plus AI"></svg></div>
+  </div>
+
+  <h2 class="sh">1 · The problem we chose</h2>
+  <p class="muted">Click a card to open it.</p>
+  <div class="pcards" id="pcards"></div>
+  <div class="card" id="pdetail"></div>
+
+  <h2 class="sh">2 · Our idea: weigh it yourself</h2>
+  <div class="card swap">
+    <div class="seg" id="swapSeg"><button data-m="glass" class="on">Glass lens</button><button data-m="poly">Plastic lens + AI</button></div>
+    <div class="swapgrid">
+      <svg id="swapSvg" viewBox="0 0 300 150" role="img" aria-label="Lens stack"></svg>
+      <div>
+        <div class="big"><b id="swEl">4</b><span>optical elements</span></div>
+        <div class="big"><b id="swMass">0</b><span>g of optics</span></div>
+        <div class="big"><b id="swCost">100%</b><span>relative lens cost <i class="lab e">Estimated</i></span></div>
+        <p class="small muted" id="swNote"></p>
+      </div>
+      <figure class="swimg"><img id="swImg" alt="Sample retina through the chosen lens"><figcaption id="swCap"></figcaption></figure>
+    </div>
+  </div>
+
+  <h2 class="sh">3 · How we test it</h2>
+  <p class="muted">Five steps. Click each one.</p>
+  <div class="flow" id="flow"></div>
+  <div class="card flow-detail" id="flowDetail"></div>
+
+  <h2 class="sh">4 · What we found on real photos</h2>
+  <div class="card"><p class="muted" id="foundIntro"></p><div class="found" id="found"></div></div>
+
+  <h2 class="sh">5 · You be the judge</h2>
+  <div class="card">
+    <p class="muted">What would convince you? Pick a question.</p>
+    <div class="seg" id="judgeSeg"></div>
+    <div id="judgeOut" class="judge"></div>
+  </div>
+
+  <h2 class="sh">How to read the labels</h2>
+  <div class="labels">
+    <div><span class="lab m">Measured</span><p>Computed from data or hardware we actually ran.</p></div>
+    <div><span class="lab s">Simulated</span><p>From our optics or image simulation. Not a physical lens.</p></div>
+    <div><span class="lab e">Estimated</span><p>Uses assumed inputs such as placeholder costs.</p></div>
+    <div><span class="lab t">Target</span><p>A goal we have not met yet.</p></div>
+  </div>
+</section>
+
+<!-- 1 LENS LAB -->
+<section class="pane" id="p-lab" data-title="Lens Lab" hidden>
+  <div class="split">
+    <div class="card">
+      <div class="stage"><img id="imgA" alt=""><img id="imgB" alt=""><span class="stamp" id="stamp"></span></div>
+      <div class="seg" id="seg" role="tablist"></div>
+      <input id="slider" type="range" min="0" max="3" step="1" value="0" aria-label="Lens condition">
+      <label class="chk"><input type="checkbox" id="oodToggle"> Polymer shown from the independent renderer (not used in training)</label>
+      <p class="small muted">Samples: <span id="kinds"></span></p>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="card">
+      <span class="lab" id="condLabel"></span>
+      <h2 id="condName"></h2>
+      <p class="muted" id="condDesc"></p>
+      <div class="gauge"><div class="track"><div class="thr" id="thr"><i>decision line</i></div><div class="mark" id="mark"></div></div><div class="ticks"><span>0 normal</span><span>classifier score</span><span>1 abnormal</span></div></div>
+      <p class="verdict" id="verdict"></p>
+      <p class="small muted" id="truth"></p>
+      <hr>
+      <h3>Blur explorer</h3>
+      <p class="small muted">Move across the image from centre to edge. The blur applied to the picture below is scaled from the ray-traced spot size at that field position.</p>
+      <input id="fieldSlider" type="range" min="0" max="100" value="0" aria-label="Field position">
+      <div class="blurpair"><figure><img id="bGlass" alt="glass blur"><figcaption id="bGlassCap"></figcaption></figure><figure><img id="bPoly" alt="polymer blur"><figcaption id="bPolyCap"></figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 OPTICS -->
+<section class="pane" id="p-optics" data-title="Optics" hidden>
+  <div class="card">
+    <div class="row-h"><div><h2>Ray trace: where does the light land?</h2><p class="muted small">Pick a field angle. Rays from a distant point pass through each lens and meet the sensor. The red patch is the blur spot, drawn to scale.</p></div><div class="seg small" id="fieldSeg"></div></div>
+    <div class="rays"><div><p class="cap">Glass, 4 elements</p><svg id="rayGlass" viewBox="0 0 460 220"></svg></div><div><p class="cap">Polymer, 2 elements</p><svg id="rayPoly" viewBox="0 0 460 220"></svg></div></div>
+    <div id="spotBars"></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Manufacturing yield</h2><p class="muted small">Share of simulated molded lenses meeting each blur floor (tolerance Monte Carlo).</p><div id="yield"></div></div>
+    <div class="card"><h2>Design X-ray</h2><p class="muted small">Spot growth when one element is removed. Tall bar means the element earns its place.</p><div id="xray"></div></div>
+  </div>
+  <div class="card"><h2>Where the classifier looks</h2><p class="muted small">Grad-CAM on the frozen classifier gives each field zone a design weight (Stage 1).</p><div class="saliency"><img src="assets/saliency.png" alt="Grad-CAM heat map"><div id="sal"></div></div></div>
+</section>
+
+<!-- 3 RESTORER -->
+<section class="pane" id="p-ai" data-title="AI Restorer" hidden>
+  <div class="grid2">
+    <div class="card"><h2>What the restorer does</h2>
+      <p class="muted">A tiny U-Net (<b id="params"></b> parameters) takes the blurry polymer image and predicts the sharp one. It trains on many random degradations (tolerance, temperature, noise) with a loss that also asks a frozen classifier to still see the lesions.</p>
+      <div class="chips"><span>Randomised blur</span><span>Lesion-aware loss</span><span>Never sees the test renderer</span></div>
+      <div class="cmp" id="cmp"></div>
+      <p class="small muted" id="cmpNote"></p>
+    </div>
+    <div class="card"><h2>Does it recover lesions, or invent them?</h2><p class="muted small">Measured on abnormal test images against the original.</p><div id="lesion"></div></div>
+  </div>
+  <div class="card"><h2>Speed</h2><p class="muted" id="latency"></p><a class="btn ghost" href="bench.html">Time it on your phone</a></div>
+</section>
+
+<!-- 4 EVIDENCE -->
+<section class="pane" id="p-evidence" data-title="Evidence" hidden>
+  <div class="card"><div class="row-h"><h2>Does the simpler lens still find disease?</h2><span class="lab e" id="evTag">Honest verdicts</span></div>
+    <p class="muted" id="verdictText"></p><div class="score" id="score"></div></div>
+  <div class="grid2">
+    <div class="card"><h2>ROC curves</h2><p class="muted small">Higher and further left is better. Click a name to hide or show it.</p><div class="legend" id="rocLegend"></div><svg id="roc" viewBox="0 0 440 440" role="img" aria-label="ROC curves"></svg></div>
+    <div class="card"><h2>Verdict vs baselines</h2><p class="muted small" id="niNote"></p><div id="niTable"></div><p class="muted" id="vsBase"></p></div>
+  </div>
+</section>
+
+<!-- 4b DECISION RAIN -->
+<section class="pane" id="p-rain" data-title="Decision Rain" hidden>
+  <div class="card">
+    <div class="row-h"><h2>Decision Rain: every test image, one raindrop</h2><span class="lab m" id="rainLab">Measured</span></div>
+    <p class="muted">Each drop is one held-out test image. <b style="color:#E0407B">Pink = abnormal eye</b>, <b style="color:#0072EF">blue = normal</b>. A drop lands where the classifier scored it. Drag the white line in any row: pink drops to its right are caught, blue drops to its right are false alarms. Good lenses keep pink and blue apart.</p>
+    <div class="cta"><button class="btn" id="rainGo">Make it rain</button><button class="btn ghost" id="rainReset">Reset lines to the chosen thresholds</button><button class="btn ghost" id="rainMatch">Match glass sensitivity</button></div>
+    <svg id="rainSvg" viewBox="0 0 900 480" role="img" aria-label="Score drops per lens pipeline with draggable decision lines"></svg>
+    <div id="rainStats" class="rainstats"></div>
+  </div>
+  <div class="card">
+    <h2>Clinic simulator: what happens to 1000 patients?</h2>
+    <p class="muted">Uses the lines you set above. Change how common the disease is in the screened group and see missed cases and false alarms for each lens.</p>
+    <label class="small">Patients screened: <b id="nPatV">1000</b><input type="range" id="nPat" min="100" max="10000" step="100" value="1000"></label>
+    <label class="small">Share with disease: <b id="prevV">10%</b><input type="range" id="prev" min="1" max="40" value="10"></label>
+    <div id="clinic"></div>
+    <p class="small muted" id="clinicNote"></p>
+  </div>
+</section>
+
+<!-- 5 IMPACT -->
+<section class="pane" id="p-impact" data-title="Impact" hidden>
+  <div class="grid2">
+    <div class="card"><h2>Lighter</h2><div id="trade"></div></div>
+    <div class="card"><h2>Cheaper, if the numbers hold</h2><p class="muted small">Cost uses placeholder coefficients, so we show the break-even instead of a headline saving.</p><div id="cost"></div><label class="small">Polymer cost vs our placeholder: <b id="mulv">1.0×</b><input type="range" id="mul" min="1" max="12" step="0.5" value="1"></label><p class="verdict small" id="mulout"></p></div>
+  </div>
+  <div class="card"><h2>What this does not show</h2>
+    <ul class="limits"><li>No physical prototype yet. Optics are a simplified simulation.</li><li>Public datasets are not clinical validation. Not a medical device.</li><li>Cost and CO₂ use placeholder coefficients.</li><li>Restored images can invent detail, so we check lesion regions.</li><li>Phone timing is a laptop number until <a href="bench.html">bench.html</a> is run on the phone.</li></ul></div>
+</section>
+
+<!-- 6a ENGINEERING -->
+<section class="pane" id="p-eng" data-title="Engineering" hidden>
+  <div class="card"><div class="row-h"><h2>Image quality: PSF and MTF, not just spot size</h2><span class="lab s">Simulated</span></div>
+    <p class="muted small">Ray-traced point-spread functions at five field positions (top row glass, bottom row polymer). MTF is how much contrast survives at a given detail size. Pass or fail rules were written down before the test (configs/acceptance.yaml).</p>
+    <img class="psfgrid" src="assets/psf_grid.png" alt="PSF grid glass above polymer at five field positions">
+    <div class="grid2"><div><svg id="mtfChart" viewBox="0 0 440 280" role="img" aria-label="MTF at 25 lp/mm across the field"></svg></div><div id="mtfVerdict"></div></div></div>
+  <div class="grid2">
+    <div class="card"><div class="row-h"><h2>Can it be made?</h2><span class="lab s">Simulated</span></div><p class="muted small">Hard manufacturing gates (thickness, slope, asphere departure, gap) are reported before any optical score.</p><div id="mfg"></div></div>
+    <div class="card"><div class="row-h"><h2>Tolerance yield</h2><span class="lab s">Simulated</span></div><p class="muted small" id="tolNote"></p><div id="tol"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Material sweep</h2><p class="muted small">Five optical polymers, 15 pairs optimised. Pairs that fail temperature or birefringence screens are marked.</p><div id="mats"></div></div>
+    <div class="card"><h2>Field of view</h2><p class="muted small">Edge blur after re-optimising for wider fields. Wider is harder for two plastic elements.</p><div id="fov"></div></div>
+  </div>
+</section>
+
+<!-- 6b RESTORER STUDY -->
+<section class="pane" id="p-study" data-title="Restorer Study" hidden>
+  <div class="card"><div class="row-h"><h2>What we tried, and what we found</h2><span class="lab s">Simulated</span></div>
+    <p class="muted" id="stDesc"></p><div id="stTable"></div></div>
+  <div class="grid2">
+    <div class="card"><h2>Lesion errors, by type</h2><p class="muted small">Removed means a real lesion disappeared. Distorted means its contrast or shape changed. Invented means a lesion-like blob that is not in the original.</p><div id="tax"></div></div>
+    <div class="card"><h2>Can we claim restoration?</h2><p class="muted small">All four checks must pass. We do not round up.</p><div id="claims"></div></div>
+  </div>
+  <div class="card"><h2>Independent judge</h2><p class="muted small">A different classifier (MobileNet) that the restorer never saw checks the images, so the restorer cannot game its own judge.</p><div id="indep"></div></div>
+</section>
+
+<!-- 6c CAPTURE CHECK -->
+<section class="pane" id="p-capture" data-title="Capture Check" hidden>
+  <div class="card"><h2>Is this a usable photo?</h2>
+    <p class="muted">Pick a photo or one of our samples. The check runs in your browser and nothing is uploaded. It tells the operator what to fix before any disease result is trusted. A quality warning and a risk result are always shown separately.</p>
+    <div class="cap-row"><input type="file" id="capFile" accept="image/*"><span class="small muted">or click a sample:</span><div class="thumbs" id="capThumbs"></div></div>
+    <div class="split"><div><canvas id="capCanvas" width="256" height="256" aria-label="Preview"></canvas></div><div id="capOut"></div></div>
+    <p class="small muted">Simple browser heuristics (sharpness, exposure, contrast, visible area, noise). They are a demonstration of the workflow, not a validated quality model. The trained gate in the evaluation uses limits fitted on the glass reference images.</p></div>
+  <div class="card"><h2>How the trained gate behaved on our test set</h2><div id="gateTbl"></div><p class="small muted" id="gateNote"></p></div>
+</section>
+
+<!-- 6d COST DEPLOY -->
+<section class="pane" id="p-cost" data-title="Cost &amp; Deploy" hidden>
+  <div class="grid2">
+    <div class="card"><div class="row-h"><h2>Whole camera module</h2><span class="lab e">Estimated</span></div><p class="muted small">Optics are only part of the device. The saving shrinks once sensor, housing, board and mount are included.</p><div id="modMass"></div></div>
+    <div class="card"><div class="row-h"><h2>Cost per good module</h2><span class="lab e">Estimated</span></div><p class="muted small">Includes tooling spread over volume, yield, scrap, assembly and inspection. Medians with the chance polymer is cheaper.</p><div id="costTbl"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="row-h"><h2>Carbon, cradle to grave</h2><span class="lab e">Estimated</span></div><div id="lca"></div></div>
+    <div class="card"><div class="row-h"><h2>Running the restorer</h2><span class="lab m">Measured on a laptop</span></div><p class="muted small">Board timing and power are estimates until measured on the real board.</p><div id="deploy"></div></div>
+  </div>
+  <div class="card"><h2>Wide field by stitching</h2><p class="muted small">Several narrow shots are registered and blended into one wide image. Tested on synthetic tiles; the residual error flags failed registrations.</p><img class="psfgrid" src="assets/montage.png" alt="Montage stitching demo"></div>
+</section>
+
+<!-- 6 RUN IT -->
+<section class="pane" id="p-run" data-title="Run it" hidden>
+  <div class="card"><h2>Reproduce everything</h2>
+    <ol class="steps">
+      <li><b>Install</b><pre>pip install -r requirements.txt</pre></li>
+      <li><b>Smoke test, no downloads</b><pre>bash scripts/run_all.sh synthetic</pre></li>
+      <li><b>Real data (Colab GPU)</b><pre>SEEDS="0 1 2" bash scripts/run_all.sh rfmid data/RFMiD --pretrained</pre></li>
+      <li><b>Open this demo</b><pre>python -m http.server 8000 --directory web</pre></li>
+      <li><b>Phone speed</b><p class="small muted">Open <code>/bench.html</code> on the phone via your Wi-Fi address.</p></li>
+      <li><b>Real lens photos</b><p class="small muted">Follow docs/REAL_CAPTURE.md, then run scripts/08_real_capture_eval.py.</p></li>
+    </ol>
+    <p class="muted small">Code: <a href="https://github.com/ShivaneeShrivas/Zeiss-hackathon">github.com/ShivaneeShrivas/Zeiss-hackathon</a></p></div>
+</section>
+</main>
+
+<footer class="foot"><p>Team Cortex · Shivanee Shrivas, Anshika Singh · IIT Kanpur · Hackathon prototype, not an official ZEISS product. Not a medical device.</p></footer>
+<script src="data/results.js"></script>
+<script src="app.js"></script>
+<script src="v4.js"></script>
+<script src="rain.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
