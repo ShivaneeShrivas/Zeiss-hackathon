@@ -125,4 +125,4 @@ Datasets are not included. RFMiD: Pachade et al., "Retinal Fundus Multi-Disease 
 
 ## Limitations
 
-No physical prototype; simplified optics (no illumination path, birefringence or stray light); public photos were already captured through real optics; the glass baseline is a representative open design, not a ZEISS product; public datasets are not clinical validation. Hackathon prototype, not an official ZEISS product.
+No physical prototype; simplified optics (no illumination path, birefringence or stray light); public photos were already captured through real optics; the glass baseline is a representative open design, not a ZEISS product; public datasets are not clinical validation.
