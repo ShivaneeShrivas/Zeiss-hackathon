@@ -19,6 +19,8 @@ FrugalOptiX is an AI design engine for a cheaper retinal (fundus) camera lens. I
 ## Headline results: real RFMiD run
 
 Test set: **480 held-out RFMiD photos** (360 abnormal, 120 normal), 256 px, opened once. Kaggle GPU, seed 0, 20 restorer epochs, total run 202 min. Every pipeline is scored by the same frozen classifier trained on glass-lens images; the threshold is set at 90% specificity on each pipeline's own validation split. **Measured.**
+**The RFMiD sample images
+The demo's sample fundus photos in web/assets/samples come from RFMiD.**
 
 | Pipeline (nominal blur) | AUC (95% CI) | Sensitivity | Specificity |
 |---|---|---|---|
